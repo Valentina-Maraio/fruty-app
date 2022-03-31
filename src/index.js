@@ -1,7 +1,10 @@
 console.log("Ciao Valentina");
 
 //call    ORIGINALE
-fetch('https://api.allorigins.win/get?url=' + encodeURIComponent('https://www.fruityvice.com/api/fruit/all'))
+axios({
+    method: "GET",
+    url: 'https://www.fruityvice.com/api/fruit/all'
+})
 .then(res => {
     const fruitBox = document.createElement('div'); 
     fruitBox.style.cssText = 
@@ -95,7 +98,9 @@ fetch('https://api.allorigins.win/get?url=' + encodeURIComponent('https://www.fr
     fruitBox.appendChild(fruitBtn);
 
     function frutyFinder() {
-        fetch('https://api.allorigins.win/get?url=' + encodeURIComponent('https://www.fruityvice.com/api/fruit/') + fruty.value)
+        let fruitAPI = 'https://www.fruityvice.com/api/fruit/' + fruty.value;
+
+        axios(fruitAPI)
         .then(res => {
             fruitName.innerHTML = fruty.value;
             fruitFamily.innerHTML = "Family: " + res.data.family;
