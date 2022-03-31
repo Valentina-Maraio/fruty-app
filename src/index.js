@@ -95,7 +95,7 @@ fetch('https://api.allorigins.win/get?url=' + encodeURIComponent('https://www.fr
     fruitBox.appendChild(fruitBtn);
 
     function frutyFinder() {
-        fetch('https://api.allorigins.win/get?url=' + encodeURIComponent('https://www.fruityvice.com/api/fruit/' + fruty.value))
+        fetch('https://api.allorigins.win/get?url=' + encodeURIComponent('https://www.fruityvice.com/api/fruit/') + fruty.value)
         .then(res => {
             fruitName.innerHTML = fruty.value;
             fruitFamily.innerHTML = "Family: " + res.data.family;
