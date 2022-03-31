@@ -1,10 +1,7 @@
 console.log("Ciao Valentina");
 
-//axios call    ORIGINALE
-axios({
-    method: "GET",
-    url: 'https://www.fruityvice.com/api/fruit/all'
-})
+//call    ORIGINALE
+fetch('https://api.allorigins.win/get?url=' + encodeURIComponent('https://www.fruityvice.com/api/fruit/all'))
 .then(res => {
     const fruitBox = document.createElement('div'); 
     fruitBox.style.cssText = 
